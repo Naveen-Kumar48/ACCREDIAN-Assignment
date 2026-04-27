@@ -14,18 +14,26 @@ export function BrandTrustSection() {
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-10 px-4 opacity-100 sm:gap-x-16 lg:gap-x-20">
-          {trustPartners.map((partner) => (
-            <div key={partner.name} className="flex items-center justify-center">
-              <Image
-                src={partner.logoSrc}
-                alt={partner.logoAlt}
-                width={160}
-                height={50}
-                className="h-10 w-auto object-contain sm:h-12 lg:h-14"
-              />
-            </div>
-          ))}
+        <div className="relative overflow-hidden py-10">
+          {/* Marquee Container */}
+          <div className="flex animate-marquee items-center gap-x-16 px-4">
+            {/* Duplicated set for seamless loop */}
+            {[...trustPartners, ...trustPartners, ...trustPartners].map((partner, index) => (
+              <div key={`${partner.name}-${index}`} className="flex shrink-0 items-center justify-center">
+                <Image
+                  src={partner.logoSrc}
+                  alt={partner.logoAlt}
+                  width={160}
+                  height={50}
+                  className="h-10 w-auto object-contain transition-all hover:scale-110 sm:h-12 lg:h-14"
+                />
+              </div>
+            ))}
+          </div>
+          
+          {/* Subtle Gradient Overlays for smooth entry/exit */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent" />
         </div>
       </div>
     </section>

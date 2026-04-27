@@ -36,15 +36,18 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Enquire Button */}
-          <div className="flex flex-col items-center gap-2 sm:items-end">
+          {/* Enquire Button Section */}
+          <div className="flex flex-col items-center gap-3 sm:items-end w-full lg:w-auto">
             <Button 
               href="#lead-form" 
-              className="bg-[#1a73e8] px-8 font-bold text-white hover:bg-blue-700"
+              className="h-12 w-full rounded-full border-none bg-[#1a73e8] px-10 text-[15px] font-bold text-white shadow-lg shadow-blue-100 transition-all hover:bg-[#1557b0] hover:shadow-blue-200 active:scale-95 sm:w-auto"
             >
               Enquire Now
             </Button>
-            <p className="text-sm font-medium text-slate-500">Speak with our Advisor</p>
+            <p className="flex items-center gap-2 text-sm font-semibold text-slate-500">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-500" />
+              Speak with our Advisor
+            </p>
           </div>
         </div>
 
