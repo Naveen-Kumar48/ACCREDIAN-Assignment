@@ -3,8 +3,8 @@
 🚀 A high-fidelity, responsive clone of the [Accredian Enterprise](https://enterprise.accredian.com/) landing page, built with **Next.js 14**, **Tailwind CSS**, and **Framer Motion**.
 
 ## 🔗 Project Links
-- **Live Demo:** [Vercel Deployment Link] (Update after deployment)
-- **GitHub Repository:** [Repository Link] (Update after push)
+- **Live Demo:** https://accredian-assignment-sigma.vercel.app/
+- **GitHub Repository:**https://github.com/Naveen-Kumar48/ACCREDIAN-Assignment
 
 ## 🛠️ Stack & Technologies
 - **Framework:** [Next.js](https://nextjs.org/) (App Router)
