@@ -6,7 +6,6 @@ import { BusinessSolutionsSection } from '@/components/sections/BusinessSolution
 import { WhyPartnerSection } from '@/components/sections/WhyPartnerSection';
 import { FeaturesSection } from '@/components/sections/FeaturesSection';
 import { HowItWorksSection } from '@/components/sections/HowItWorksSection';
-import { CATSection } from '@/components/sections/CATSection';
 import { CATFrameworkSection } from '@/components/sections/CATFrameworkSection';
 import { GrantFundingSection } from '@/components/sections/GrantFundingSection';
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
@@ -26,7 +25,6 @@ export default function Home() {
       <FeaturesSection />
       <HowItWorksSection />
       <CATFrameworkSection />
-      <CATSection />
       <GrantFundingSection />
       <TestimonialsSection />
       <FAQSection />

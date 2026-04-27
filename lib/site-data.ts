@@ -33,11 +33,11 @@ export const brandAssets = {
 };
 
 export const navLinks: NavLink[] = [
-  { label: 'Home', href: '#top' },
+  { label: 'Home', href: '#hero' },
   { label: 'Stats', href: '#stats' },
   { label: 'Clients', href: '#features' },
   { label: 'Accredian Edge', href: '#usp' },
-  { label: 'CAT', href: '#cat' },
+  { label: 'CAT', href: '#cat-framework' },
   { label: 'How It Works', href: '#how-it-works' },
   { label: 'FAQs', href: '#faq' },
   { label: 'Testimonials', href: '#testimonials' },
