@@ -1,18 +1,7 @@
 import type { Metadata } from 'next';
-import { Manrope, Space_Grotesk } from 'next/font/google';
 import './globals.css';
-
-const manrope = Manrope({
-  subsets: ['latin'],
-  variable: '--font-manrope',
-  display: 'swap',
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-space-grotesk',
-  display: 'swap',
-});
+import { Navbar } from '@/components/layout/Navbar';
+import { Footer } from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
   title: {
@@ -39,11 +28,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body
-        className={`${manrope.variable} ${spaceGrotesk.variable} font-sans text-slate-900 antialiased`}
-      >
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body suppressHydrationWarning className="font-sans text-ink antialiased">
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

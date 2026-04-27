@@ -26,17 +26,17 @@ export function Button(props: AnchorButtonProps | NativeButtonProps) {
   const { children, variant = 'primary', className, fullWidth = false } = props;
 
   const styles = cn(
-    'inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2',
+    'inline-flex items-center justify-center gap-2 rounded-[12px] px-6 py-3 text-sm font-semibold transition duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2',
     fullWidth && 'w-full',
-    variant === 'primary' && 'bg-brand-600 text-white shadow-glow hover:-translate-y-0.5 hover:bg-brand-500',
+    variant === 'primary' && 'bg-brand-600 text-white shadow-soft hover:bg-brand-700',
     variant === 'secondary' &&
-      'border border-slate-200 bg-white text-slate-900 shadow-sm hover:border-brand-200 hover:text-brand-700',
-    variant === 'ghost' && 'text-slate-700 hover:bg-slate-100',
+      'border border-border bg-surface text-ink shadow-soft hover:border-brand-600 hover:text-brand-700',
+    variant === 'ghost' && 'text-charcoal hover:bg-whisper',
     className,
   );
 
   if ('href' in props && props.href) {
-    const { href, target, rel, ...anchorProps } = props;
+    const { href, target, rel, fullWidth: _fullWidth, ...anchorProps } = props;
 
     return (
       <a href={href} target={target} rel={rel} className={styles} {...anchorProps}>
@@ -45,7 +45,8 @@ export function Button(props: AnchorButtonProps | NativeButtonProps) {
     );
   }
 
-  const { href: _href, type = 'button', ...buttonProps } = props as NativeButtonProps;
+  const { href: _href, type = 'button', fullWidth: _fullWidth, ...buttonProps } =
+    props as NativeButtonProps;
 
   return (
     <button type={type} className={styles} {...buttonProps}>

@@ -1,69 +1,82 @@
-import { Mail, MapPin, Phone } from 'lucide-react';
-import { navLinks } from '@/lib/site-data';
+import Image from 'next/image';
+import { Button } from '@/components/ui/Button';
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="border-t border-slate-200 bg-slate-950 text-slate-200">
-      <div className="mx-auto grid max-w-6xl gap-12 px-4 py-14 sm:px-6 lg:grid-cols-[1.2fr_0.8fr_0.8fr] lg:px-8">
-        <div className="space-y-5">
-          <div className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-600 text-sm font-bold text-white shadow-glow">
-              a
-            </span>
-            <div>
-              <p className="font-display text-xl font-semibold text-white">Accredian</p>
-              <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Enterprise</p>
+    <footer className="border-t border-slate-200 bg-white text-slate-600">
+      <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
+          {/* Logo and Socials */}
+          <div className="space-y-6">
+            <Image 
+              src="/Accredian/logo.webp" 
+              alt="Accredian Logo" 
+              width={160} 
+              height={48} 
+              className="h-auto w-40"
+            />
+            <div className="flex items-center gap-4">
+              <a href="#" className="transition-opacity hover:opacity-70">
+                <img src="/Accredian/default (4).svg" alt="Facebook" className="h-5 w-5" />
+              </a>
+              <a href="#" className="transition-opacity hover:opacity-70">
+                <img src="/Accredian/default (3).svg" alt="LinkedIn" className="h-5 w-5" />
+              </a>
+              <a href="#" className="transition-opacity hover:opacity-70">
+                <img src="/Accredian/default (2).svg" alt="Twitter" className="h-5 w-5" />
+              </a>
+              <a href="#" className="transition-opacity hover:opacity-70">
+                <img src="/Accredian/default (1).svg" alt="Instagram" className="h-5 w-5" />
+              </a>
+              <a href="#" className="transition-opacity hover:opacity-70">
+                <img src="/Accredian/default.svg" alt="YouTube" className="h-5 w-5" />
+              </a>
             </div>
           </div>
-          <p className="max-w-md text-sm leading-7 text-slate-400">
-            Enterprise learning programs that blend strategy, execution, and measurable outcomes for modern teams.
-          </p>
-          <div className="flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
-            <span>Leadership</span>
-            <span>Product</span>
-            <span>Data</span>
-            <span>AI</span>
+
+          {/* Enquire Button */}
+          <div className="flex flex-col items-center gap-2 sm:items-end">
+            <Button 
+              href="#lead-form" 
+              className="bg-[#1a73e8] px-8 font-bold text-white hover:bg-blue-700"
+            >
+              Enquire Now
+            </Button>
+            <p className="text-sm font-medium text-slate-500">Speak with our Advisor</p>
           </div>
         </div>
 
-        <div>
-          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.24em] text-slate-400">Quick Links</p>
-          <div className="space-y-3">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="block text-sm text-slate-300 transition hover:text-white"
-              >
-                {link.label}
-              </a>
-            ))}
+        {/* Divider Line */}
+        <div className="my-10 h-[1px] w-full bg-slate-300" />
+
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-2">
+          {/* Company Links */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-bold text-slate-950">Accredian</h3>
+            <ul className="space-y-4 text-[15px]">
+              <li><a href="#" className="hover:text-[#1a73e8]">About</a></li>
+              <li><a href="#" className="hover:text-[#1a73e8]">Blog</a></li>
+              <li><a href="#" className="hover:text-[#1a73e8]">Why Accredian</a></li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-bold text-slate-950">Contact Us</h3>
+            <div className="space-y-4 text-[15px] leading-relaxed">
+              <p>Email us: <a href="mailto:enterprise@accredian.com" className="text-[#1a73e8] hover:underline">enterprise@accredian.com</a></p>
+              <div className="max-w-md">
+                Office Address: 4th Floor, 250, Phase IV, Udyog Vihar, Sector 18, Gurugram, Haryana
+              </div>
+            </div>
           </div>
         </div>
 
-        <div>
-          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.24em] text-slate-400">Contact Us</p>
-          <div className="space-y-4 text-sm text-slate-300">
-            <p className="flex items-start gap-3">
-              <Mail className="mt-0.5 h-4 w-4 text-brand-400" />
-              enterprise@accredian.com
-            </p>
-            <p className="flex items-start gap-3">
-              <Phone className="mt-0.5 h-4 w-4 text-brand-400" />
-              Speak with our advisor
-            </p>
-            <p className="flex items-start gap-3">
-              <MapPin className="mt-0.5 h-4 w-4 text-brand-400" />
-              Gurugram, Haryana, India
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-          <p>© 2026 Accredian. All rights reserved.</p>
-          <p>Built with Next.js, Tailwind CSS, and mock API routes for internship practice.</p>
+        {/* Copyright */}
+        <div className="mt-16 border-t border-slate-200 pt-8 text-center text-[13px] font-medium text-slate-500">
+          <p>© {currentYear} Accredian A Brand of FullStack Education Pvt Ltd. All Rights Reserved</p>
         </div>
       </div>
     </footer>

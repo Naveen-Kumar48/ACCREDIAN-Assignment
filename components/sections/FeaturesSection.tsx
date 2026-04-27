@@ -1,31 +1,40 @@
-import { Card } from '@/components/ui/Card';
-import { SectionTitle } from '@/components/ui/SectionTitle';
-import { enterpriseFeatures } from '@/lib/site-data';
+import { cn } from '@/lib/utils';
+import { domainExpertiseItems } from '@/lib/site-data';
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="scroll-mt-24 px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-      <div className="mx-auto max-w-6xl space-y-10">
-        <SectionTitle
-          eyebrow="Features & Benefits"
-          title="The Accredian Edge"
-          description="Specialized programs designed to fuel innovation, build capability, and improve team performance."
-        />
+    <section id="features" className="scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl space-y-16">
+        <div className="space-y-4 text-center">
+          <h2 className="font-display text-[2.4rem] font-bold tracking-tight text-slate-950 sm:text-[3rem]">
+            Our <span className="text-[#1a73e8]">Domain Expertise</span>
+          </h2>
+          <p className="text-[1rem] font-medium text-slate-500 sm:text-[18px]">
+            <span className="text-[#1a73e8]">Specialized Programs</span> Designed to Fuel Innovation
+          </p>
+        </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          {enterpriseFeatures.map((feature) => {
-            const Icon = feature.icon;
-
-            return (
-              <Card key={feature.title} className="group h-full transition duration-200 hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(37,99,235,0.12)]">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-50 text-brand-700 transition group-hover:bg-brand-600 group-hover:text-white">
-                  <Icon className="h-6 w-6" />
-                </div>
-                <h3 className="mt-5 font-display text-xl font-semibold text-slate-950">{feature.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">{feature.description}</p>
-              </Card>
-            );
-          })}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {domainExpertiseItems.map((item, index) => (
+            <div 
+              key={item.title} 
+              className={cn(
+                "flex flex-col items-center justify-center rounded-[20px] bg-white px-8 py-10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all hover:shadow-[0_12px_40px_rgb(0,0,0,0.1)]",
+                index === 6 && "lg:col-start-2"
+              )}
+            >
+              <div className="mb-6 flex h-20 items-center justify-center">
+                <img 
+                  src={item.iconPath} 
+                  alt={item.title}
+                  className="h-16 w-16 object-contain"
+                />
+              </div>
+              <h3 className="text-center font-display text-[19px] font-bold text-slate-950">
+                {item.title}
+              </h3>
+            </div>
+          ))}
         </div>
       </div>
     </section>

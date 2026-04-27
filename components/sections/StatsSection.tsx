@@ -52,42 +52,47 @@ export function StatsSection() {
   }, [refreshKey]);
 
   return (
-    <section id="stats" className="scroll-mt-24 px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-      <div className="mx-auto max-w-6xl space-y-10">
-        <SectionTitle
-          eyebrow="Our Track Record"
-          title="The numbers behind our success"
-          description="A quick snapshot of the scale, consistency, and impact of our enterprise learning delivery."
-        />
+    <section id="stats" className="scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl space-y-16">
+        <div className="space-y-4 text-center">
+          <h2 className="font-display text-[2.5rem] font-bold tracking-tight text-slate-950 sm:text-[3rem]">
+            Our <span className="text-[#1a73e8]">Track Record</span>
+          </h2>
+          <p className="text-[1.1rem] font-medium text-slate-500 sm:text-[20px]">
+            The Numbers Behind <span className="text-[#1a73e8]">Our Success</span>
+          </p>
+        </div>
 
         {loading ? (
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-12 md:grid-cols-3">
             {Array.from({ length: 3 }).map((_, index) => (
-              <Card key={index} className="space-y-4">
-                <div className="h-4 w-24 animate-pulse rounded-full bg-slate-200" />
-                <div className="h-10 w-24 animate-pulse rounded-2xl bg-slate-200" />
-                <div className="h-4 w-full animate-pulse rounded-full bg-slate-100" />
-                <div className="h-4 w-5/6 animate-pulse rounded-full bg-slate-100" />
-              </Card>
+              <div key={index} className="flex flex-col items-center space-y-6">
+                <div className="h-10 w-24 animate-pulse rounded-full bg-blue-50" />
+                <div className="h-4 w-48 animate-pulse rounded-full bg-slate-100" />
+              </div>
             ))}
           </div>
         ) : error ? (
-          <Card className="space-y-4 border-rose-200 bg-rose-50">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-rose-600">Something went wrong</p>
-            <p className="text-sm leading-7 text-rose-700">{error}</p>
-            <Button type="button" variant="secondary" onClick={() => setRefreshKey((value) => value + 1)}>
-              <RefreshCw className="h-4 w-4" />
+          <div className="mx-auto max-w-md text-center">
+            <p className="text-rose-600">{error}</p>
+            <Button type="button" variant="ghost" className="mt-4" onClick={() => setRefreshKey((value) => value + 1)}>
+              <RefreshCw className="mr-2 h-4 w-4" />
               Try again
             </Button>
-          </Card>
+          </div>
         ) : (
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid divide-y divide-slate-100 md:grid-cols-3 md:divide-x md:divide-y-0">
             {stats?.items.map((stat) => (
-              <Card key={stat.label} className="space-y-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-600">{stat.label}</p>
-                <p className="font-display text-4xl font-semibold tracking-tight text-slate-950">{stat.value}</p>
-                <p className="text-sm leading-7 text-slate-600">{stat.description}</p>
-              </Card>
+              <div key={stat.label} className="flex flex-col items-center px-12 py-8 text-center sm:py-10">
+                <div className="mb-8 inline-flex items-center justify-center rounded-[30px] bg-[#dbeafe] px-10 py-3">
+                  <span className="text-[28px] font-bold tracking-tight text-[#1a73e8]">
+                    {stat.value}
+                  </span>
+                </div>
+                <p className="max-w-[240px] text-[18px] font-semibold leading-relaxed text-slate-800">
+                  {stat.description}
+                </p>
+              </div>
             ))}
           </div>
         )}

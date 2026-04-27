@@ -123,6 +123,11 @@ export function LeadCaptureSection() {
                   value={formState.email}
                   onChange={handleChange}
                   required
+                  autoComplete="off"
+                  data-1p-ignore="true"
+                  data-lpignore="true"
+                  data-bwignore="true"
+                  suppressHydrationWarning
                   className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-100"
                   placeholder="name@company.com"
                 />

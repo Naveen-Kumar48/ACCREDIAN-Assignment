@@ -1,27 +1,37 @@
-import { Navbar } from '@/components/layout/Navbar';
-import { Footer } from '@/components/layout/Footer';
 import { HeroSection } from '@/components/sections/HeroSection';
-import { BrandTrustSection } from '@/components/sections/BrandTrustSection';
-import { FeaturesSection } from '@/components/sections/FeaturesSection';
 import { StatsSection } from '@/components/sections/StatsSection';
+import { BrandTrustSection } from '@/components/sections/BrandTrustSection';
+import { AccredianEdgeSection } from '@/components/sections/AccredianEdgeSection';
+import { BusinessSolutionsSection } from '@/components/sections/BusinessSolutionsSection';
+import { WhyPartnerSection } from '@/components/sections/WhyPartnerSection';
+import { FeaturesSection } from '@/components/sections/FeaturesSection';
+import { HowItWorksSection } from '@/components/sections/HowItWorksSection';
+import { CATSection } from '@/components/sections/CATSection';
+import { CATFrameworkSection } from '@/components/sections/CATFrameworkSection';
+import { GrantFundingSection } from '@/components/sections/GrantFundingSection';
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
+import { FAQSection } from '@/components/sections/FAQSection';
 import { CTASection } from '@/components/sections/CTASection';
 import { LeadCaptureSection } from '@/components/sections/LeadCaptureSection';
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <div id="top" className="min-h-screen">
-      <Navbar />
-      <main>
-        <HeroSection />
-        <BrandTrustSection />
-        <FeaturesSection />
-        <StatsSection />
-        <TestimonialsSection />
-        <CTASection />
-        <LeadCaptureSection />
-      </main>
-      <Footer />
-    </div>
+    <main className="flex flex-col">
+      <HeroSection />
+      <StatsSection />
+      <BrandTrustSection />
+      <AccredianEdgeSection />
+      <BusinessSolutionsSection />
+      <WhyPartnerSection />
+      <FeaturesSection />
+      <HowItWorksSection />
+      <CATFrameworkSection />
+      <CATSection />
+      <GrantFundingSection />
+      <TestimonialsSection />
+      <FAQSection />
+      <CTASection />
+      <LeadCaptureSection />
+    </main>
   );
 }

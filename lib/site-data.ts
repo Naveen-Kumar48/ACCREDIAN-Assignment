@@ -6,6 +6,16 @@ import {
   type LucideIcon,
   Users,
   Workflow,
+  Lightbulb,
+  MessageSquare,
+  Settings2,
+  Cpu,
+  ArrowLeftRight,
+  Target,
+  Box,
+  Brain,
+  Globe,
+  CreditCard,
 } from 'lucide-react';
 
 export type NavLink = {
@@ -13,51 +23,108 @@ export type NavLink = {
   href: string;
 };
 
+export const brandAssets = {
+  logo: '/Accredian/logo.webp',
+  hero: '/Accredian/imagehuman.png',
+  heroBackdrop: '/Accredian/corporate-big-hero-v4.webp',
+  usp: '/Accredian/accredian-edge-usp-v3.svg',
+  uspMobile: '/Accredian/accredian-edge-usp-mobile.svg',
+  ctaCircle: '/Accredian/cta-circle.svg',
+};
+
 export const navLinks: NavLink[] = [
-  { label: 'Solutions', href: '#features' },
-  { label: 'Track Record', href: '#stats' },
+  { label: 'Home', href: '#top' },
+  { label: 'Stats', href: '#stats' },
+  { label: 'Clients', href: '#features' },
+  { label: 'Accredian Edge', href: '#usp' },
+  { label: 'CAT', href: '#cat' },
+  { label: 'How It Works', href: '#how-it-works' },
+  { label: 'FAQs', href: '#faq' },
   { label: 'Testimonials', href: '#testimonials' },
-  { label: 'Connect', href: '#lead-form' },
 ];
 
-export const trustPartners = ['Reliance', 'HCL', 'IBM', 'CRIF', 'ADP', 'Bayer'];
+export type PartnerLogo = {
+  name: string;
+  logoSrc: string;
+  logoAlt: string;
+};
+
+export const trustPartners: PartnerLogo[] = [
+  {
+    name: 'Reliance',
+    logoSrc: '/Accredian/rel.png',
+    logoAlt: 'Reliance Industries Limited',
+  },
+  {
+    name: 'HCL',
+    logoSrc: '/Accredian/hcl.png',
+    logoAlt: 'HCL logo',
+  },
+  {
+    name: 'IBM',
+    logoSrc: '/Accredian/ibm.png',
+    logoAlt: 'IBM logo',
+  },
+  {
+    name: 'CRIF',
+    logoSrc: '/Accredian/crif.png',
+    logoAlt: 'CRIF logo',
+  },
+  {
+    name: 'ADP',
+    logoSrc: '/Accredian/adp.svg',
+    logoAlt: 'ADP logo',
+  },
+  {
+    name: 'Bayer',
+    logoSrc: '/Accredian/bayer.svg',
+    logoAlt: 'Bayer logo',
+  },
+];
 
 export type FeatureCard = {
   title: string;
   description: string;
   icon: LucideIcon;
+  imageSrc: string;
+  imageAlt: string;
 };
 
-export const enterpriseFeatures: FeatureCard[] = [
+export const domainExpertiseItems = [
   {
     title: 'Product & Innovation Hub',
-    description: 'Build customer-centric products with research-backed learning paths and rapid experimentation.',
-    icon: Rocket,
+    description: 'Build customer-centric products with research-backed learning paths.',
+    iconPath: '/Accredian/default (19).svg',
   },
   {
     title: 'Gen-AI Mastery',
-    description: 'Equip teams to use AI responsibly for automation, productivity, and smarter decisions.',
-    icon: Sparkles,
+    description: 'Equip teams to use AI responsibly for automation and smarter decisions.',
+    iconPath: '/Accredian/default (18).svg',
   },
   {
     title: 'Leadership Elevation',
-    description: 'Strengthen managers and future leaders with coaching, communication, and strategic thinking.',
-    icon: Users,
+    description: 'Strengthen managers and future leaders with coaching and strategy.',
+    iconPath: '/Accredian/default (17).svg',
   },
   {
     title: 'Tech & Data Insights',
-    description: 'Turn analytics into action with practical data literacy and dashboard-driven decisions.',
-    icon: BarChart3,
+    description: 'Turn analytics into action with practical data literacy.',
+    iconPath: '/Accredian/default (16).svg',
   },
   {
     title: 'Operations Excellence',
-    description: 'Improve quality, consistency, and execution with process-first learning programs.',
-    icon: Workflow,
+    description: 'Improve quality and execution with process-first learning.',
+    iconPath: '/Accredian/default (15).svg',
   },
   {
     title: 'Digital Enterprise',
-    description: 'Modernize digital workflows, change adoption, and cross-functional collaboration.',
-    icon: ShieldCheck,
+    description: 'Modernize digital workflows and cross-functional collaboration.',
+    iconPath: '/Accredian/default (14).svg',
+  },
+  {
+    title: 'Fintech Innovation Lab',
+    description: 'Specialized programs for financial technology and innovation.',
+    iconPath: '/Accredian/default (13).svg',
   },
 ];
 
@@ -70,18 +137,18 @@ export type TrackRecordStat = {
 export const trackRecordStats: TrackRecordStat[] = [
   {
     value: '10K+',
-    label: 'Professionals trained',
-    description: 'Across enterprise teams and leadership tracks.',
+    label: 'Professionals Trained',
+    description: 'Professionals Trained For Exceptional Career Success',
   },
   {
     value: '200+',
-    label: 'Sessions delivered',
-    description: 'Live workshops, custom cohorts, and advisory sessions.',
+    label: 'Sessions Delivered',
+    description: 'Sessions Delivered With Unmatched Learning Excellence',
   },
   {
     value: '5K+',
-    label: 'Active learners',
-    description: 'Engaged across ongoing programs and repeat cohorts.',
+    label: 'Active Learners',
+    description: 'Active Learners Engaged In Dynamic Courses',
   },
 ];
 
@@ -91,6 +158,8 @@ export type Testimonial = {
   author: string;
   role: string;
   location: string;
+  logoSrc: string;
+  logoAlt: string;
 };
 
 export const partnerTestimonials: Testimonial[] = [
@@ -101,6 +170,8 @@ export const partnerTestimonials: Testimonial[] = [
     author: 'Priya Sharma',
     role: 'VP, People Development',
     location: 'Enterprise Client',
+    logoSrc: '/Accredian/adp.svg',
+    logoAlt: 'ADP logo',
   },
   {
     company: 'Bayer',
@@ -109,6 +180,8 @@ export const partnerTestimonials: Testimonial[] = [
     author: 'Arjun Mehta',
     role: 'Learning Partner',
     location: 'Enterprise Client',
+    logoSrc: '/Accredian/bayer.svg',
+    logoAlt: 'Bayer logo',
   },
   {
     company: 'Reliance',
@@ -117,6 +190,8 @@ export const partnerTestimonials: Testimonial[] = [
     author: 'Neha Kapoor',
     role: 'Talent & Capability Lead',
     location: 'Enterprise Client',
+    logoSrc: '/Accredian/rel.png',
+    logoAlt: 'Reliance Industries Limited logo',
   },
 ];
 
@@ -132,5 +207,57 @@ export const leadHighlights = [
   {
     title: 'Enterprise-ready delivery',
     description: 'Programs are designed for scale, adoption, and measurable impact.',
+  },
+];
+
+export type USPStep = {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  position: 'top' | 'bottom';
+};
+
+export const accredianEdgeSteps: USPStep[] = [
+  {
+    title: 'Tailored Solutions',
+    description: "Programs customized to your organization's goals and challenges.",
+    icon: Lightbulb,
+    position: 'top',
+  },
+  {
+    title: 'Expert Guidance',
+    description: 'Learn from industry leaders with real-world success.',
+    icon: MessageSquare,
+    position: 'bottom',
+  },
+  {
+    title: 'Innovative Framework',
+    description: 'Proprietary methods for impactful, application-driven results.',
+    icon: Settings2,
+    position: 'top',
+  },
+  {
+    title: 'Advanced Technology',
+    description: 'State-of-the-art LMS for seamless learning experiences.',
+    icon: Cpu,
+    position: 'bottom',
+  },
+  {
+    title: 'Diverse Offerings',
+    description: 'Courses across industries, skill levels, and emerging fields.',
+    icon: ArrowLeftRight,
+    position: 'top',
+  },
+  {
+    title: 'Proven Impact',
+    description: 'Trusted by leading organizations for measurable ROI.',
+    icon: Target,
+    position: 'bottom',
+  },
+  {
+    title: 'Flexible Delivery',
+    description: 'Online and offline options tailored to your needs.',
+    icon: Box,
+    position: 'top',
   },
 ];

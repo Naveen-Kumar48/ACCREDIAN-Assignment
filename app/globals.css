@@ -1,9 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   color-scheme: light;
+  --color-primary-blue: #1a73e8;
+  --color-secondary-blue: #2563eb;
+  --color-light-blue: #3b82f6;
+  --color-success-green: #16a34a;
+  --color-pure-white: #ffffff;
+  --color-light-gray: #e5e7eb;
+  --color-pure-black: #000000;
+  --color-dark-gray: #374151;
+  --color-medium-gray: #4b5563;
+  --color-border-gray: #d1d5db;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+  --spacing-2xl: 32px;
+  --spacing-3xl: 40px;
+  --spacing-4xl: 48px;
+  --spacing-5xl: 64px;
+  --spacing-6xl: 96px;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  --font-circular: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 html {
@@ -12,13 +43,17 @@ html {
 
 body {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 28%),
-    radial-gradient(circle at top right, rgba(14, 165, 233, 0.08), transparent 22%),
-    linear-gradient(180deg, #f8fbff 0%, #f8fafc 30%, #f8fafc 100%);
+  background: var(--color-pure-white);
+  color: var(--color-pure-black);
+  font-family: var(--font-circular);
+}
+
+.font-sans,
+.font-display {
+  font-family: var(--font-circular);
 }
 
 ::selection {
-  background: rgba(37, 99, 235, 0.15);
-  color: #1d4ed8;
+  background: rgba(26, 115, 232, 0.15);
+  color: var(--color-secondary-blue);
 }
